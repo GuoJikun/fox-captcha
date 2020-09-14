@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "gvcode": "^1.0.4",
     "vue": "^2.6.11"
   },
   "devDependencies": {
