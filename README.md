@@ -1,5 +1,7 @@
 # 图片验证码生成器
 
+[demo](https://guojikun.github.io/fox-captcha/) [Github](https://github.com/GuoJikun/fox-captcha) [New issue](https://github.com/GuoJikun/fox-captcha/issues/new)
+
 ## 安装
 
 ```bash
