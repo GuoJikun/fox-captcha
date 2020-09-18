@@ -1,29 +1,34 @@
-# gvcode
+# 图片验证码生成器
 
-## Project setup
-```
-yarn install
-```
+## 安装
 
-### Compiles and hot-reloads for development
-```
-yarn serve
+```bash
+yarn add fox-captcha
 ```
 
-### Compiles and minifies for production
-```
-yarn build
+## 使用
+
+```vue
+<template>
+    <fox-captcha></fox-captcha>
+</template>
+<script>
+import Vue from "vue";
+import FoxCaptcha from "fox-captcha";
+Vue.use(FoxCaptcha);
+</script>
 ```
 
-### Run your unit tests
-```
-yarn test:unit
-```
+## Props
 
-### Lints and fixes files
-```
-yarn lint
-```
+| 属性   | 说明 | 类型   | 可选值         | 默认值 |
+| ------ | ---- | ------ | -------------- | ------ |
+| type   | 类型 | string | letter/digital | -      |
+| width  | 类型 | number | -              | 100    |
+| height | 类型 | number | -              | 30     |
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## methods
+
+| 方法名   | 说明               | 传入参数 | 返回值  |
+| -------- | ------------------ | -------- | ------- |
+| validate | 校验验证码是否正确 | string   | boolean |

@@ -1,7 +1,7 @@
-import GVCode from "./src/gvcode.js";
+import Captcha from "./src/captcha.vue";
 
-GVCode.install = Vue => {
-    Vue.component(GVCode.name, GVCode);
+Captcha.install = Vue => {
+    Vue.component(Captcha.name, Captcha);
 };
 
-export default GVCode;
+export default Captcha;
