@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div>
         <div class="container">
             <div>
                 <h1>基础用法</h1>
@@ -13,21 +13,33 @@
             </div>
             <div>
                 <h1>设置验证码的类别</h1>
-                <p>通过<code>type</code>设置验证码的类别</p>
+                <p>
+                    通过
+                    <code>type</code>
+                    设置验证码的类别
+                </p>
                 <div>
                     <div>
                         <h2>数字类型验证码</h2>
+
                         <FoxGVCode type="digital" />
                     </div>
                     <div>
                         <h2>字母类型验证码</h2>
+
                         <FoxGVCode type="letter" />
                     </div>
                 </div>
             </div>
             <div>
                 <h1>设置验证码的大小</h1>
-                <p>通过<code>width</code>和<code>height</code>设置验证码的大小</p>
+                <p>
+                    通过
+                    <code>width</code>
+                    和
+                    <code>height</code>
+                    设置验证码的大小
+                </p>
                 <div>
                     <FoxGVCode :width="100" :height="40" />
                 </div>
@@ -37,43 +49,19 @@
 </template>
 
 <script>
-// import FoxGVCode from "../lib/foxCaptcha.umd.js";
 import FoxGVCode from "./components/gvcode";
 import codeImage from "./assets/codeImage.png";
-
 export default {
     name: "App",
-    components: {
-        FoxGVCode,
-    },
+    components: { FoxGVCode },
     data() {
-        return {
-            codeImage,
-            val: "",
-        };
+        return { codeImage, val: "" };
     },
     mounted() {
-        /* const canvas = document.querySelector("#canvas");
-        const ctx = canvas.getContext("2d");
-        ctx.beginPath();
-        ctx.fillStyle = "rgba(60, 60, 60, 0.2)";
-        ctx.fillRect(0, 0, 400, 250);
-        const location = {
-            x: 240,
-            y: 60,
-            width: 80,
-            height: 60,
-        };
-        ctx.moveTo(240, 60);
-        ctx.lineTo(240, 120);
-        ctx.lineTo(320, 120);
-        ctx.lineTo(320, 60);
-        ctx.lineTo(300, 60);
-        ctx.moveTo(314, 60);
-        ctx.arc(314, 54, 16, 0, 2 * Math.PI, true);
-        ctx.strokeStyle = "blue";
-        ctx.stroke();
-        console.log(location); */
+        /* const canvas = document.querySelector("#canvas"); const ctx = canvas.getContext("2d");
+ctx.beginPath(); ctx.fillStyle = "rgba(60, 60, 60, 0.2)"; ctx.fillRect(0, 0, 400, 250); const location = { x: 240, y: 60, width: 80, height:
+60, }; ctx.moveTo(240, 60); ctx.lineTo(240, 120); ctx.lineTo(320, 120); ctx.lineTo(320, 60); ctx.lineTo(300, 60); ctx.moveTo(314, 60); ctx.arc(314,
+54, 16, 0, 2 * Math.PI, true); ctx.strokeStyle = "blue"; ctx.stroke(); console.log(location); */
     },
     methods: {
         checkCode() {

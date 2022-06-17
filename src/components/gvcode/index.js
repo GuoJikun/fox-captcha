@@ -1,7 +1,9 @@
 import Captcha from "./src/captcha.vue";
 
-Captcha.install = Vue => {
-    Vue.component(Captcha.name, Captcha);
-};
+export { Captcha };
 
-export default Captcha;
+export default {
+    install: app => {
+        app.component(Captcha.name, Captcha);
+    },
+};

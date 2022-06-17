@@ -1,6 +1,7 @@
 <template>
     <img :src="dataUrl" alt="验证码" :style="{ width: `${width}px`, height: `${height}px`, cursor: `pointer` }" @click="refresh" />
 </template>
+
 <script>
 import gvcode from "gvcode";
 export default {
@@ -13,10 +14,11 @@ export default {
             validator(value) {
                 return ["letter", "digital"].includes(value);
             },
+            default: "digital",
         },
     },
     data() {
-        return { dataUrl: "" };
+        return { dataUrl: "", instance: null };
     },
     mounted() {
         this.init();
