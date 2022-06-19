@@ -11,6 +11,7 @@ specifiers:
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^8.0.3
+  fox-captcha: ^2.0.0
   gvcode: ^1.0.4
   lint-staged: ^11.1.2
   prettier: ^2.4.1
@@ -20,6 +21,7 @@ specifiers:
 
 dependencies:
   core-js: 3.23.1
+  fox-captcha: 2.0.0
   gvcode: 1.0.4
   vue: 3.2.37
 
@@ -3974,6 +3976,14 @@ packages:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
     dev: true
+
+  /fox-captcha/2.0.0:
+    resolution: {integrity: sha512-9lMr5hNcMlEJ/mtbb8N0jBZU5ESDNAGYDJTcHc3n67INHkaIcseNoUf71RgKtjcaMMLbBfyIsNMjjBtDJPxqag==}
+    dependencies:
+      core-js: 3.23.1
+      gvcode: 1.0.4
+      vue: 3.2.37
+    dev: false
 
   /fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}

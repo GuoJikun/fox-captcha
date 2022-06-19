@@ -4,7 +4,7 @@
             <div>
                 <h1>基础用法</h1>
                 <div>
-                    <FoxGVCode ref="imgCode" />
+                    <FoxCaptcha ref="imgCode" />
                     <div>
                         <input type="text" v-model="val" />
                         <button @click="checkCode" class="ml-20">校验验证码</button>
@@ -22,12 +22,12 @@
                     <div>
                         <h2>数字类型验证码</h2>
 
-                        <FoxGVCode type="digital" />
+                        <FoxCaptcha type="digital" />
                     </div>
                     <div>
                         <h2>字母类型验证码</h2>
 
-                        <FoxGVCode type="letter" />
+                        <FoxCaptcha type="letter" />
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     设置验证码的大小
                 </p>
                 <div>
-                    <FoxGVCode :width="100" :height="40" />
+                    <FoxCaptcha :width="100" :height="40" />
                 </div>
             </div>
         </div>
@@ -49,11 +49,12 @@
 </template>
 
 <script>
-import FoxGVCode from "./components/gvcode";
+// import FoxCaptcha from "./components/gvcode";
+import FoxCaptcha from "fox-captcha";
 import codeImage from "./assets/codeImage.png";
 export default {
     name: "App",
-    components: { FoxGVCode },
+    components: { FoxCaptcha },
     data() {
         return { codeImage, val: "" };
     },
