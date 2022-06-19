@@ -1,5 +1,5 @@
 const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
-    publicPath: "/captcha/",
+    publicPath: "/fox-captcha/",
     transpileDependencies: true,
 });
