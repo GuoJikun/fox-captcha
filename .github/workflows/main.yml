@@ -2,36 +2,43 @@
 
 name: 自动部署文档
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
-    push:
-        branches: [master]
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-    # This workflow contains a single job called "build"
-    build:
-        # The type of runner that the job will run on
-        runs-on: ubuntu-latest
-        # Steps represent a sequence of tasks that will be executed as part of the job
-        steps:
-            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-            - name: Checkout
-              uses: actions/checkout@v1
+  build:
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-            - name: 安装依赖
-              run: pnpm
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
 
-            - name: 配置git
-              run: git config --global user.email "guojikun486546@163.com" && git config --global user.name "GuoJikun"
+    - name 安装pnpm
+      run: npm i -g pnpm
 
-            - name: build and deploy
-              env:
-                  ACCESS_TOKEN: ${{ secrets.git_token }}
-                  BRANCH: gh-pages
-              run: pnpm run build
-            - name: 部署文档到gh-pages
-              env:
-                  ACCESS_TOKEN: ${{ secrets.git_token }}
-              run: cd dist && git init && git add -A && git commit -m "deploy" && git push -f https://$ACCESS_TOKEN@github.com/GuoJikun/fox-captcha.git master:gh-pages
+    - name: 安装依赖
+      run: pnpm i
+
+    - name: 配置git
+      run: git config --global user.email "guojikun486546@163.com" && git config --global user.name "GuoJikun"
+
+    - name: build and deploy
+      env:
+          ACCESS_TOKEN: ${{ secrets.git_token }}
+          BRANCH: gh-pages
+      run: npm run build
+
+    - name: 部署文档到gh-pages
+      env:
+          ACCESS_TOKEN: ${{ secrets.git_token }}
+      run: cd dist && git init && git add -A && git commit -m "deploy" && git push -f https://$ACCESS_TOKEN@github.com/GuoJikun/fox-captcha.git master:gh-pages
