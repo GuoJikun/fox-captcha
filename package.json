@@ -1,7 +1,7 @@
 {
     "name": "fox-captcha",
     "description": "vue组件；图片验证码组件；验证码组件",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "private": false,
     "main": "lib/foxCaptcha.umd.js",
     "author": "GuoJikun",
